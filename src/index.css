@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-studio-cream text-studio-charcoal font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+/* Custom Elegant Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F3EE;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D9A091;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B88E8D;
+}
+
+/* Luxury Smooth Selection */
+::selection {
+  background: rgba(217, 160, 145, 0.2);
+  color: #2C2523;
+}
+
+/* Custom Swiper Pagination Styling */
+.swiper-pagination-bullet {
+  background: #8C7873 !important;
+  opacity: 0.3 !important;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: #D9A091 !important;
+  opacity: 1 !important;
+  width: 18px !important;
+  border-radius: 4px !important;
+}
+
+/* Hide Swiper Navigation Default Arrows outline */
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  display: none !important;
+}
+
+/* Custom Hide Scrollbar Utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Luxury Ambient Glow */
+.ambient-glow {
+  box-shadow: 0 10px 50px -12px rgba(217, 160, 145, 0.15);
+}
+
+.glassmorphism {
+  background: rgba(247, 243, 238, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(217, 160, 145, 0.1);
+}
+
+/* Button ripple effect helper */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Premium smooth font rendering & mobile touch reset */
+* {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* iOS momentum touch scrolling */
+.touch-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Safe area inset helpers for notched devices */
+.pb-safe {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+.pt-safe {
+  padding-top: max(0.75rem, env(safe-area-inset-top));
+}
+
+.mb-safe {
+  margin-bottom: env(safe-area-inset-bottom);
+}
+

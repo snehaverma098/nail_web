@@ -1,0 +1,295 @@
+// Luxury Nail Studio - Premium Mock Data
+
+export const HERO_SLIDES = [
+  {
+    id: 1,
+    image: "/hero_1.jpg",
+    label: "BESPOKE NAIL EXPERIENCE",
+    title: "Luxury Nail Extensions",
+    subtitle: "Premium artistry, flawless finish, made just for you.",
+    cta: "BOOK APPOINTMENT"
+  },
+  {
+    id: 2,
+    image: "/hero_2.jpg",
+    label: "SIGNATURE COLLECTION",
+    title: "French Elegance",
+    subtitle: "Timeless French tips crafted with modern luxury.",
+    cta: "BOOK NOW"
+  },
+  {
+    id: 3,
+    image: "/hero_3.jpg",
+    label: "TRENDING COLLECTION",
+    title: "Chrome Perfection",
+    subtitle: "Mirror-like shine with a flawless metallic finish.",
+    cta: "EXPLORE DESIGNS"
+  },
+  {
+    id: 4,
+    image: "/hero_4.jpg",
+    label: "BESTSELLER",
+    title: "Velvet Cat Eye",
+    subtitle: "Magnetic shimmer that changes beautifully with light.",
+    cta: "BOOK NOW"
+  },
+  {
+    id: 5,
+    image: "/hero_5.jpg",
+    label: "EXCLUSIVE COLLECTION",
+    title: "3D Couture Art",
+    subtitle: "Luxury sculpted nail art for bold personalities.",
+    cta: "BOOK COUTURE"
+  },
+  {
+    id: 6,
+    image: "/hero_6.jpg",
+    label: "CUSTOM DESIGNS",
+    title: "Designed Just For You",
+    subtitle: "Bring your inspiration and we'll create your dream nails.",
+    cta: "CUSTOMIZE NOW"
+  }
+];
+
+export const CATEGORIES = [
+  { id: "french", name: "French", count: 12, image: "/category_french.jpg" },
+  { id: "chrome", name: "Chrome", count: 8, image: "/category_chrome.jpg" },
+  { id: "bridal", name: "Bridal", count: 6, image: "/category_bridal.jpg" },
+  { id: "korean", name: "Korean", count: 14, image: "/category_korean.jpg" },
+  { id: "anime", name: "Anime", count: 10, image: "/category_anime.jpg" },
+  { id: "minimal", name: "Minimal", count: 16, image: "/category_minimal.jpg" },
+  { id: "luxury", name: "Luxury", count: 9, image: "/category_luxury.jpg" },
+  { id: "3d", name: "3D", count: 11, image: "/category_3d.jpg" },
+  { id: "gel", name: "Gel", count: 20, image: "/category_gel.jpg" },
+  { id: "custom", name: "Custom", count: 5, image: "/category_custom.jpg" }
+];
+
+export const NAIL_DESIGNS = [
+  {
+    id: "design-1",
+    name: "Classic French Illusion",
+    category: "french",
+    price: 1800,
+    duration: 60,
+    images: [
+      "/custom_nail_1.jpg",
+      "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=600&auto=format&fit=crop"
+    ],
+    description: "Reimagined elegance. Soft pink gel foundations paired with seamlessly blended ultra-fine white tips for a flawless natural extension look.",
+    tag: "Signature",
+    rating: 4.9,
+    reviewsCount: 42
+  },
+  {
+    id: "design-2",
+    name: "Glazed Donut Chrome",
+    category: "chrome",
+    price: 2200,
+    duration: 75,
+    images: [
+      "/custom_nail_2.jpg",
+      "https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=600&auto=format&fit=crop"
+    ],
+    description: "Ethereal, high-fashion chrome dust buffed onto custom soft-white gel base. Inspired by premium model manicures.",
+    tag: "Trending",
+    rating: 4.8,
+    reviewsCount: 78
+  },
+  {
+    id: "design-3",
+    name: "Ethereal Bridal Lace",
+    category: "bridal",
+    price: 3500,
+    duration: 120,
+    images: [
+      "/custom_nail_3.jpg",
+      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=600&auto=format&fit=crop"
+    ],
+    description: "Hand-sculpted sheer gel base accented with delicate micro-painted lace patterns, soft-rose accents, and genuine freshwater seed pearls.",
+    tag: "Bridal Exclusive",
+    rating: 5.0,
+    reviewsCount: 31
+  },
+  {
+    id: "design-4",
+    name: "Velvet Cat Eye",
+    category: "korean",
+    price: 2400,
+    duration: 90,
+    images: [
+      "/custom_nail_4.jpg",
+      "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=600&auto=format&fit=crop"
+    ],
+    description: "Imported Korean magnetic gel creating a deep velvet dimensional shimmer. Captures light at every angle with a liquid-like movement.",
+    tag: "Best Seller",
+    rating: 4.9,
+    reviewsCount: 114
+  },
+  {
+    id: "design-5",
+    name: "Strawberry Matcha Pastel",
+    category: "minimal",
+    price: 2000,
+    duration: 80,
+    images: [
+      "/custom_nail_5.jpg",
+      "https://images.unsplash.com/photo-1610992015732-2449b0de0a86?q=80&w=600&auto=format&fit=crop"
+    ],
+    description: "Sleek asymmetric pastel blocks. Premium matte finish featuring soft, airy hues that feel fresh and editorial.",
+    tag: "New",
+    rating: 4.7,
+    reviewsCount: 19
+  },
+  {
+    id: "design-6",
+    name: "3D Pearl Bloom",
+    category: "3d",
+    price: 4200,
+    duration: 150,
+    images: [
+      "/custom_nail_6.jpg",
+      "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=600&auto=format&fit=crop"
+    ],
+    description: "Couture custom sculpting. Dynamic 3D gel flowers, delicate chrome veins, and custom glass droplets created shell by shell.",
+    tag: "Avant-Garde",
+    rating: 5.0,
+    reviewsCount: 23
+  },
+  {
+    id: "design-7",
+    name: "Minimalist Negative Space",
+    category: "minimal",
+    price: 1600,
+    duration: 45,
+    images: [
+      "/custom_nail_7.jpg",
+      "https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=600&auto=format&fit=crop"
+    ],
+    description: "Ultra-fine rose gold lines drawn over a transparent matte glass topcoat. Understated luxury for the modern purist.",
+    tag: "Minimalist",
+    rating: 4.9,
+    reviewsCount: 56
+  },
+  {
+    id: "design-8",
+    name: "Luxury Nude & Gold Leaf",
+    category: "luxury",
+    price: 2500,
+    duration: 90,
+    images: [
+      "/custom_nail_8.jpg",
+      "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=600&auto=format&fit=crop"
+    ],
+    description: "A matchless semi-translucent skin-toned builder gel blended with floating genuine 24k gold leaf flakes for rich depth.",
+    tag: "Luxury Nude",
+    rating: 4.9,
+    reviewsCount: 89
+  },
+  {
+    id: "design-9",
+    name: "Chibi Pastel Kawaii",
+    category: "anime",
+    price: 3800,
+    duration: 120,
+    images: [
+      "/custom_nail_9.jpg",
+      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=600&auto=format&fit=crop"
+    ],
+    description: "Detailed hand-drawn anime aesthetic vectors and matching dreamy pastel cloud blends. Fully custom gel nails.",
+    tag: "Artisanal",
+    rating: 4.8,
+    reviewsCount: 14
+  }
+];
+
+export const REELS = [
+  {
+    id: 1,
+    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-beautiful-hands-of-a-woman-getting-manicure-40292-large.mp4",
+    title: "Chrome Buffing Process",
+    views: "24.5k"
+  },
+  {
+    id: 2,
+    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-manicurist-filing-a-womans-nails-40293-large.mp4",
+    title: "Precise Nail Sculpting",
+    views: "18.2k"
+  },
+  {
+    id: 3,
+    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-putting-nail-polish-on-a-client-40297-large.mp4",
+    title: "Gold Foil Detailing",
+    views: "34.1k"
+  },
+  {
+    id: 4,
+    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-applying-nail-polish-to-a-woman-with-manicure-40294-large.mp4",
+    title: "Gloss Topcoat Application",
+    views: "42.0k"
+  }
+];
+
+export const TESTIMONIALS = [
+  {
+    id: 1,
+    name: "Clara Dubois",
+    role: "Fashion Editor",
+    review: "Nailedit.frr delivers an elite, bespoke experience. The 3D pearl couture set I got for Paris Fashion Week was a absolute masterpiece. Truly the fashion standard.",
+    rating: 5,
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop"
+  },
+  {
+    id: 2,
+    name: "Sophia Martinez",
+    role: "Bridal Stylist",
+    review: "I recommend all my brides to Nailedit.frr. Their hand-painted lace work is pure poetry. They sanitized everything, took their time, and the results were flawless.",
+    rating: 5,
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop"
+  },
+  {
+    id: 3,
+    name: "Aaliyah Sen",
+    role: "Creative Director",
+    review: "Minimalist, quiet luxury at its best. The glazed donut chrome looks incredibly expensive and has stayed chip-free for over four weeks. Exceptional service.",
+    rating: 5,
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop"
+  }
+];
+
+export const FAQS = [
+  {
+    id: "faq-1",
+    question: "How long do extensions last?",
+    answer: "Our premium gel extensions typically last between 3 to 5 weeks depending on your lifestyle and natural nail growth. We recommend booking a maintenance fill every 3 weeks to keep them pristine and structurally sound."
+  },
+  {
+    id: "faq-2",
+    question: "Are nails reusable?",
+    answer: "If you purchase our luxury hand-crafted Press-On sets, they are fully reusable! With proper application using our custom tabs and correct removal, each set can be worn up to 5 times. Salon gel extensions, however, are sculpted directly onto your nails."
+  },
+  {
+    id: "faq-3",
+    question: "Do you sanitize tools?",
+    answer: "Absolutely. Safety and hygiene are cornerstones of our premium service. All metal instruments undergo surgical-grade medical autoclave sterilization between each client. Disposable tools (files, buffers) are single-use only and gifted to you after your session."
+  },
+  {
+    id: "faq-4",
+    question: "Can I customize designs?",
+    answer: "Yes, customization is our specialty! You can select custom lengths, shapes, colors, and upload your inspiration files. For highly complex avant-garde sets, you can describe your vision in the special instructions field during booking."
+  },
+  {
+    id: "faq-5",
+    question: "How long is an appointment?",
+    answer: "Appointment durations vary by design complexity. Simple minimal sets take 45–60 minutes, standard builder gels take around 90 minutes, and intricate 3D couture or bridal extensions require up to 2.5 hours of dedicated artisan craftsmanship."
+  }
+];
+
+export const INSTAGRAM_POSTS = [
+  { id: 1, image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=400&auto=format&fit=crop" },
+  { id: 2, image: "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=400&auto=format&fit=crop" },
+  { id: 3, image: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=400&auto=format&fit=crop" },
+  { id: 4, image: "https://images.unsplash.com/photo-1632345031435-8797b2d58045?q=80&w=400&auto=format&fit=crop" },
+  { id: 5, image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=400&auto=format&fit=crop" },
+  { id: 6, image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=400&auto=format&fit=crop" }
+];
