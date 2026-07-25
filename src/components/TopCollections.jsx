@@ -43,16 +43,16 @@ export default function TopCollections({ onSelectCategory }) {
       </div>
 
       {/* Grid Collage (2-Column Mobile App Style) */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 md:gap-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 md:gap-8 items-stretch">
         {COLLECTIONS.map((col) => (
           <motion.div
             key={col.id}
             onClick={() => onSelectCategory(col.id)}
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6 }}
-            className="relative overflow-hidden rounded-xl sm:rounded-2xl group cursor-pointer border border-studio-pink/20 shadow-sm aspect-[3/4] w-full active:scale-[0.99] transition-transform duration-300"
+            viewport={{ once: true, margin: "0px" }}
+            transition={{ duration: 0.4 }}
+            className="relative overflow-hidden rounded-xl sm:rounded-2xl group cursor-pointer border border-studio-pink/20 shadow-sm aspect-[3/4] w-full active:scale-[0.99] transition-transform duration-300 transform-gpu"
           >
             {/* Image zoom on hover */}
             <div className="absolute inset-0 bg-studio-charcoal/35 group-hover:bg-studio-charcoal/20 transition-all duration-700 z-10" />
@@ -64,14 +64,14 @@ export default function TopCollections({ onSelectCategory }) {
             />
 
             {/* Minimal caption details */}
-            <div className="absolute inset-0 z-20 flex flex-col justify-end p-4 sm:p-6 md:p-8">
-              <span className="text-[8px] sm:text-[9px] uppercase tracking-[0.2em] sm:tracking-[0.25em] text-studio-pink mb-0.5 sm:mb-1 block font-medium">
+            <div className="absolute inset-0 z-20 flex flex-col justify-end p-3 sm:p-6 md:p-8">
+              <span className="text-[8px] sm:text-[9px] uppercase tracking-[0.15em] sm:tracking-[0.25em] text-studio-pink mb-0.5 sm:mb-1 block font-medium">
                 Signature Capsule
               </span>
-              <h3 className="text-sm sm:text-xl md:text-2xl font-serif text-white font-medium mb-0.5 sm:mb-1 group-hover:text-studio-pink transition-colors duration-300 line-clamp-1">
+              <h3 className="text-xs sm:text-xl md:text-2xl font-serif text-white font-medium mb-0.5 sm:mb-1 group-hover:text-studio-pink transition-colors duration-300 leading-tight break-words">
                 {col.title}
               </h3>
-              <p className="text-[10px] sm:text-xs text-white/85 font-light tracking-editorial line-clamp-1">
+              <p className="text-[9px] sm:text-xs text-white/85 font-light tracking-editorial leading-tight break-words">
                 {col.subtitle}
               </p>
             </div>

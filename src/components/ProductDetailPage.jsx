@@ -51,7 +51,7 @@ export default function ProductDetailPage({
   };
 
   return (
-    <section className="w-full py-10 px-4 md:px-8 max-w-7xl mx-auto bg-studio-cream">
+    <section className="w-full py-10 pb-20 md:pb-0 px-4 md:px-8 max-w-7xl mx-auto bg-studio-cream">
       {/* Back Button */}
       <button
         onClick={onBack}
