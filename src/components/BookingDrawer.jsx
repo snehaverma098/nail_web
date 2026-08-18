@@ -81,7 +81,7 @@ export default function BookingDrawer({
       `- ${item.name} (${item.length}, ${item.shape}, ${item.color.name})`
     ).join('%0A');
 
-    const message = `Bonjour! I would like to confirm my booking with Nailedit.frr:%0A%0A` +
+    const message = `Hi! I would like to confirm my booking with Nailedit.frr:%0A%0A` +
       `*Booking ID:* ${confirmedBooking.id}%0A` +
       `*Client Name:* ${confirmedBooking.clientName}%0A` +
       `*Date:* ${confirmedBooking.date}%0A` +
@@ -372,7 +372,7 @@ export default function BookingDrawer({
 
                   <div className="space-y-2">
                     <h3 className="text-xl font-serif text-studio-charcoal font-semibold">
-                      Réservation Confirmée
+                      Reservation Confirmed
                     </h3>
                     <p className="text-xs text-studio-brown font-light leading-relaxed max-w-xs">
                       We have successfully registered your slot. A summary has been prepared for validation.

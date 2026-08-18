@@ -16,9 +16,12 @@ export default {
           gold: '#B88E8D',       // Rose Gold/Dusty Rose
           brown: '#8C7873',      // Light Brown
           charcoal: '#2C2523',   // Very dark brown/almost black
+          wine: '#3B0910',       // Deep Wine Red / Burgundy
+          burgundy: '#2B050B',   // Dark Burgundy Accent
         }
       },
       fontFamily: {
+        display: ['"Cormorant Garamond"', '"Playfair Display"', 'Didot', 'Bodoni MT', 'serif'],
         serif: ['"Playfair Display"', 'serif'],
         sans: ['Outfit', 'Inter', 'sans-serif'],
       },
