@@ -4,25 +4,25 @@ import { motion } from 'framer-motion';
 const COLLECTIONS = [
   {
     id: "3d",
-    title: "3D Sweetheart Cute",
+    title: "Bow & Meow",
     subtitle: "Hand-sculpted cat charms & bows in pink",
     image: "/collection_1.jpg"
   },
   {
     id: "anime",
-    title: "Dark Manga & Red Chrome",
+    title: "Blood.Family.Loyalty",
     subtitle: "Hand-painted dark aesthetic vectors",
     image: "/collection_2.jpg"
   },
   {
     id: "custom",
-    title: "Sakura Blossom & Cat",
+    title: "Cherry Doll",
     subtitle: "Cherry blossom art with custom 3D accents",
     image: "/collection_3.jpg"
   },
   {
     id: "korean",
-    title: "Gothic Noir Horror",
+    title: "Stars & Cats",
     subtitle: "High-contrast black & white graphic sets",
     image: "/collection_4.jpg"
   }
