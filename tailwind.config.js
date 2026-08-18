@@ -22,6 +22,7 @@ export default {
       },
       fontFamily: {
         display: ['"Cormorant Garamond"', '"Playfair Display"', 'Didot', 'Bodoni MT', 'serif'],
+        cursive: ['"Great Vibes"', '"Alex Brush"', 'cursive'],
         serif: ['"Playfair Display"', 'serif'],
         sans: ['Outfit', 'Inter', 'sans-serif'],
       },
