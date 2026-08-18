@@ -5,9 +5,9 @@ import { Star, Clock } from 'lucide-react';
 const NEW_ARRIVALS = [
   {
     id: "design-10",
-    name: "Aura Quartz Chrome",
+    name: "Cherry Doll",
     tag: "Trending",
-    price: 2300,
+    price: 999,
     duration: 75,
     rating: 4.9,
     reviewsCount: 32,
@@ -16,9 +16,9 @@ const NEW_ARRIVALS = [
   },
   {
     id: "design-11",
-    name: "Baroque Gold Filigree",
+    name: "Bow & Meow",
     tag: "New Launch",
-    price: 4500,
+    price: 999,
     duration: 160,
     rating: 5.0,
     reviewsCount: 8,
@@ -27,9 +27,9 @@ const NEW_ARRIVALS = [
   },
   {
     id: "design-12",
-    name: "Milky Way Cat Eye",
+    name: "Circus of Horrors",
     tag: "Viral",
-    price: 2500,
+    price: 699,
     duration: 90,
     rating: 4.9,
     reviewsCount: 46,
