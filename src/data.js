@@ -67,7 +67,7 @@ export const CATEGORIES = [
 export const NAIL_DESIGNS = [
   {
     id: "design-1",
-    name: "Classic French Illusion",
+    name: "Bow & Meow",
     category: "french",
     price: 1800,
     duration: 60,
@@ -83,7 +83,7 @@ export const NAIL_DESIGNS = [
   },
   {
     id: "design-2",
-    name: "Glazed Donut Chrome",
+    name: "Patel Paradise",
     category: "chrome",
     price: 2200,
     duration: 75,
@@ -98,7 +98,7 @@ export const NAIL_DESIGNS = [
   },
   {
     id: "design-3",
-    name: "Ethereal Bridal Lace",
+    name: "Swan & Lotus",
     category: "bridal",
     price: 3500,
     duration: 120,
@@ -113,7 +113,7 @@ export const NAIL_DESIGNS = [
   },
   {
     id: "design-4",
-    name: "Velvet Cat Eye",
+    name: "P.S I Love You",
     category: "korean",
     price: 2400,
     duration: 90,
@@ -128,7 +128,7 @@ export const NAIL_DESIGNS = [
   },
   {
     id: "design-5",
-    name: "Strawberry Matcha Pastel",
+    name: "Blood.Family.Loyalty",
     category: "minimal",
     price: 2000,
     duration: 80,
@@ -143,7 +143,7 @@ export const NAIL_DESIGNS = [
   },
   {
     id: "design-6",
-    name: "3D Pearl Bloom",
+    name: "Riviera Picnic",
     category: "3d",
     price: 4200,
     duration: 150,
@@ -158,7 +158,7 @@ export const NAIL_DESIGNS = [
   },
   {
     id: "design-7",
-    name: "Minimalist Negative Space",
+    name: "Cherry Doll",
     category: "minimal",
     price: 1600,
     duration: 45,
@@ -173,7 +173,7 @@ export const NAIL_DESIGNS = [
   },
   {
     id: "design-8",
-    name: "Luxury Nude & Gold Leaf",
+    name: "Purple Sun",
     category: "luxury",
     price: 2500,
     duration: 90,
@@ -188,7 +188,7 @@ export const NAIL_DESIGNS = [
   },
   {
     id: "design-9",
-    name: "Chibi Pastel Kawaii",
+    name: "Circus Of Horrors",
     category: "anime",
     price: 3800,
     duration: 120,
