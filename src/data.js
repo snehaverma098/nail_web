@@ -233,27 +233,43 @@ export const REELS = [
 export const TESTIMONIALS = [
   {
     id: 1,
-    name: "Clara Dubois",
-    role: "Fashion Editor",
-    review: "Nailedit.frr delivers an elite, bespoke experience. The 3D pearl couture set I got for Paris Fashion Week was a absolute masterpiece. Truly the fashion standard.",
-    rating: 5,
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop"
+    name: "Simran Kaur",
+    role: "Ludhiana Client",
+    review: "Nailedit.frr is hands down the best nail studio in Ludhiana! Their builder gel extensions lasted 4+ weeks without a single chip. Pristine craftsmanship.",
+    rating: 5.0,
+    initials: "SK"
   },
   {
     id: 2,
-    name: "Sophia Martinez",
-    role: "Bridal Stylist",
-    review: "I recommend all my brides to Nailedit.frr. Their hand-painted lace work is pure poetry. They sanitized everything, took their time, and the results were flawless.",
-    rating: 5,
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop"
+    name: "Ananya Sharma",
+    role: "Bridal Client",
+    review: "Booked them for my wedding nails. The hand-painted 3D pearl work was pure perfection. The hygiene standards and cuticle care were top tier!",
+    rating: 5.0,
+    initials: "AS"
   },
   {
     id: 3,
-    name: "Aaliyah Sen",
-    role: "Creative Director",
-    review: "Minimalist, quiet luxury at its best. The glazed donut chrome looks incredibly expensive and has stayed chip-free for over four weeks. Exceptional service.",
-    rating: 5,
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop"
+    name: "Priya Malhotra",
+    role: "Chandigarh Client",
+    review: "Loved the glazed donut chrome finish! Super subtle and glossy. Really impressed with how patient and detailed the technician was.",
+    rating: 4.5,
+    initials: "PM"
+  },
+  {
+    id: 4,
+    name: "Divya Kapoor",
+    role: "Regular Client",
+    review: "The French tip precision here is unmatched in Punjab. Clean studio vibe, flawless cuticle prep, and long-lasting extensions every single time.",
+    rating: 5.0,
+    initials: "DK"
+  },
+  {
+    id: 5,
+    name: "Mehak Oberoi",
+    role: "Custom Art Client",
+    review: "Showed them an Instagram inspo photo for Korean cat-eye art and they executed it even better! 10/10 recommend Nailedit.frr.",
+    rating: 4.5,
+    initials: "MO"
   }
 ];
 
