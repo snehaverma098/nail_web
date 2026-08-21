@@ -5,13 +5,6 @@ import { NAIL_DESIGNS } from '../data';
 
 const LENGTHS = ['Short', 'Medium', 'Long'];
 const SHAPES = ['Square', 'Oval', 'Almond', 'Coffin', 'Stiletto'];
-const COLORS = [
-  { name: 'Nude Pink', hex: '#EED9D1' },
-  { name: 'Milky White', hex: '#F3EFE9' },
-  { name: 'Dusty Rose', hex: '#C59B8E' },
-  { name: 'Glaze White', hex: '#EAE6E1' },
-  { name: 'Chrome Rose', hex: '#D1AC9B' },
-];
 
 export default function ProductDetailPage({ 
   design, 
@@ -22,7 +15,6 @@ export default function ProductDetailPage({
   const [activeImage, setActiveImage] = useState(design.images[0]);
   const [selectedLength, setSelectedLength] = useState('Medium');
   const [selectedShape, setSelectedShape] = useState('Almond');
-  const [selectedColor, setSelectedColor] = useState(COLORS[0]);
   const [sizeGuideOpen, setSizeGuideOpen] = useState(false);
   const [hoveredImage, setHoveredImage] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -44,7 +36,6 @@ export default function ProductDetailPage({
       ...design,
       length: selectedLength,
       shape: selectedShape,
-      color: selectedColor,
       customPrice: design.price + (selectedLength === 'Long' ? 400 : selectedLength === 'Medium' ? 200 : 0)
     };
     onAddToBag(customizedItem);
@@ -219,34 +210,7 @@ export default function ProductDetailPage({
               </div>
             </div>
 
-            {/* Color Swatch Selector */}
-            <div>
-              <label className="text-xs uppercase tracking-luxury font-medium text-studio-charcoal block mb-3">
-                3. Polish Base Accent
-              </label>
-              <div className="flex space-x-3 sm:space-x-4">
-                {COLORS.map((col) => (
-                  <button
-                    key={col.name}
-                    onClick={() => setSelectedColor(col)}
-                    className={`w-10 h-10 rounded-full transition-all duration-300 relative border flex items-center justify-center ${
-                      selectedColor.name === col.name 
-                        ? 'border-studio-rose scale-110 shadow-sm ring-2 ring-studio-rose/20' 
-                        : 'border-studio-pink/30 hover:scale-105 active:scale-95'
-                    }`}
-                    style={{ backgroundColor: col.hex }}
-                    title={col.name}
-                  >
-                    {selectedColor.name === col.name && (
-                      <span className="w-2 h-2 rounded-full bg-studio-charcoal" />
-                    )}
-                  </button>
-                ))}
-              </div>
-              <span className="text-[10px] text-studio-brown uppercase mt-2 block font-light">
-                Active Selection: <span className="font-medium text-studio-charcoal">{selectedColor.name}</span>
-              </span>
-            </div>
+
 
             {/* Book Now Button (Desktop / Main Container) */}
             <div className="pt-6">

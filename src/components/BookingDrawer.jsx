@@ -78,7 +78,7 @@ export default function BookingDrawer({
     if (!confirmedBooking) return;
 
     const itemsSummary = confirmedBooking.items.map((item) => 
-      `- ${item.name} (${item.length}, ${item.shape}, ${item.color.name})`
+      `- ${item.name} (${item.length}, ${item.shape})`
     ).join('%0A');
 
     const message = `Hi! I would like to confirm my booking with Nailedit.frr:%0A%0A` +
@@ -187,7 +187,6 @@ export default function BookingDrawer({
                             <div className="text-[10px] text-studio-brown uppercase tracking-editorial mt-2 space-y-0.5">
                               <p>Length: <span className="font-medium text-studio-charcoal">{item.length}</span></p>
                               <p>Shape: <span className="font-medium text-studio-charcoal">{item.shape}</span></p>
-                              <p>Color: <span className="font-medium text-studio-charcoal">{item.color.name}</span></p>
                             </div>
 
                             <div className="flex justify-between items-end mt-4">
