@@ -68,11 +68,7 @@ export const NAIL_DESIGNS = [
     category: "3d",
     price: 1800,
     duration: 60,
-    images: [
-      "/custom_nail_1.jpg",
-      "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=600&auto=format&fit=crop"
-    ],
+    images: ["/custom_nail_1.jpg"],
     description: "Reimagined elegance. Soft pink gel foundations paired with seamlessly blended ultra-fine white tips for a flawless natural extension look.",
     tag: "Signature",
     rating: 4.9,
@@ -84,10 +80,7 @@ export const NAIL_DESIGNS = [
     category: "3d",
     price: 2200,
     duration: 75,
-    images: [
-      "/custom_nail_2.jpg",
-      "https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=600&auto=format&fit=crop"
-    ],
+    images: ["/custom_nail_2.jpg"],
     description: "Ethereal, high-fashion chrome dust buffed onto custom soft-white gel base. Inspired by premium model manicures.",
     tag: "Trending",
     rating: 4.8,
@@ -99,10 +92,7 @@ export const NAIL_DESIGNS = [
     category: "korean",
     price: 3500,
     duration: 120,
-    images: [
-      "/custom_nail_3.jpg",
-      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=600&auto=format&fit=crop"
-    ],
+    images: ["/custom_nail_3.jpg"],
     description: "Hand-sculpted sheer gel base accented with delicate micro-painted lace patterns, soft-rose accents, and genuine freshwater seed pearls.",
     tag: "Bridal Exclusive",
     rating: 5.0,
@@ -114,10 +104,7 @@ export const NAIL_DESIGNS = [
     category: "french",
     price: 2400,
     duration: 90,
-    images: [
-      "/custom_nail_4.jpg",
-      "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=600&auto=format&fit=crop"
-    ],
+    images: ["/custom_nail_4.jpg"],
     description: "Imported Korean magnetic gel creating a deep velvet dimensional shimmer. Captures light at every angle with a liquid-like movement.",
     tag: "Best Seller",
     rating: 4.9,
@@ -129,10 +116,7 @@ export const NAIL_DESIGNS = [
     category: "anime",
     price: 2000,
     duration: 80,
-    images: [
-      "/custom_nail_5.jpg",
-      "https://images.unsplash.com/photo-1610992015732-2449b0de0a86?q=80&w=600&auto=format&fit=crop"
-    ],
+    images: ["/custom_nail_5.jpg"],
     description: "Sleek asymmetric pastel blocks. Premium matte finish featuring soft, airy hues that feel fresh and editorial.",
     tag: "New",
     rating: 4.7,
@@ -144,10 +128,7 @@ export const NAIL_DESIGNS = [
     category: "anime",
     price: 2600,
     duration: 90,
-    images: [
-      "/collection_4.jpg",
-      "https://images.unsplash.com/photo-1632345031435-8797b2d58045?q=80&w=600&auto=format&fit=crop"
-    ],
+    images: ["/collection_4.jpg"],
     description: "Dreamy starry aesthetic vector set featuring shimmering celestial constellations and hand-drawn anime accents.",
     tag: "Anime Special",
     rating: 4.9,
@@ -159,10 +140,7 @@ export const NAIL_DESIGNS = [
     category: "french",
     price: 4200,
     duration: 150,
-    images: [
-      "/custom_nail_6.jpg",
-      "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=600&auto=format&fit=crop"
-    ],
+    images: ["/custom_nail_6.jpg"],
     description: "Couture custom sculpting. Dynamic 3D gel flowers, delicate chrome veins, and custom glass droplets created shell by shell.",
     tag: "Avant-Garde",
     rating: 5.0,
@@ -174,10 +152,7 @@ export const NAIL_DESIGNS = [
     category: "french",
     price: 1600,
     duration: 45,
-    images: [
-      "/custom_nail_7.jpg",
-      "https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=600&auto=format&fit=crop"
-    ],
+    images: ["/custom_nail_7.jpg"],
     description: "Ultra-fine rose gold lines drawn over a transparent matte glass topcoat. Understated luxury for the modern purist.",
     tag: "Minimalist",
     rating: 4.9,
@@ -189,10 +164,7 @@ export const NAIL_DESIGNS = [
     category: "artisanal",
     price: 2500,
     duration: 90,
-    images: [
-      "/custom_nail_8.jpg",
-      "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=600&auto=format&fit=crop"
-    ],
+    images: ["/custom_nail_8.jpg"],
     description: "A matchless semi-translucent skin-toned builder gel blended with floating genuine 24k gold leaf flakes for rich depth.",
     tag: "Luxury Nude",
     rating: 4.9,
@@ -204,10 +176,7 @@ export const NAIL_DESIGNS = [
     category: "artisanal",
     price: 3800,
     duration: 120,
-    images: [
-      "/custom_nail_9.jpg",
-      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=600&auto=format&fit=crop"
-    ],
+    images: ["/custom_nail_9.jpg"],
     description: "Detailed hand-drawn artisanal vectors and matching dreamy gothic pastel cloud blends. Fully custom gel nails.",
     tag: "Artisanal",
     rating: 4.8,
@@ -314,10 +283,10 @@ export const FAQS = [
 ];
 
 export const INSTAGRAM_POSTS = [
-  { id: 1, image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=400&auto=format&fit=crop" },
-  { id: 2, image: "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=400&auto=format&fit=crop" },
-  { id: 3, image: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=400&auto=format&fit=crop" },
-  { id: 4, image: "https://images.unsplash.com/photo-1632345031435-8797b2d58045?q=80&w=400&auto=format&fit=crop" },
-  { id: 5, image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=400&auto=format&fit=crop" },
-  { id: 6, image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=400&auto=format&fit=crop" }
+  { id: 1, image: "/custom_nail_1.jpg" },
+  { id: 2, image: "/custom_nail_2.jpg" },
+  { id: 3, image: "/custom_nail_3.jpg" },
+  { id: 4, image: "/custom_nail_4.jpg" },
+  { id: 5, image: "/custom_nail_5.jpg" },
+  { id: 6, image: "/custom_nail_6.jpg" }
 ];

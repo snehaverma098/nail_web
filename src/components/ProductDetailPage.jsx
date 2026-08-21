@@ -66,19 +66,21 @@ export default function ProductDetailPage({
         {/* Left Side: Image Gallery */}
         <div className="lg:col-span-7 flex flex-col md:flex-row gap-4">
           {/* Thumbnails list */}
-          <div className="flex md:flex-col order-2 md:order-1 gap-3 overflow-x-auto md:overflow-x-visible no-scrollbar">
-            {design.images.map((img, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveImage(img)}
-                className={`w-16 h-16 md:w-20 md:h-20 rounded-xl overflow-hidden flex-shrink-0 border-2 transition-all duration-300 ${
-                  activeImage === img ? 'border-studio-rose scale-95 shadow-sm' : 'border-transparent hover:border-studio-rose/55'
-                }`}
-              >
-                <img src={img} alt={`${design.name} view ${i}`} className="w-full h-full object-cover" />
-              </button>
-            ))}
-          </div>
+          {design.images && design.images.length > 1 && (
+            <div className="flex md:flex-col order-2 md:order-1 gap-3 overflow-x-auto md:overflow-x-visible no-scrollbar">
+              {design.images.map((img, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveImage(img)}
+                  className={`w-16 h-16 md:w-20 md:h-20 rounded-xl overflow-hidden flex-shrink-0 border-2 transition-all duration-300 ${
+                    activeImage === img ? 'border-studio-rose scale-95 shadow-sm' : 'border-transparent hover:border-studio-rose/55'
+                  }`}
+                >
+                  <img src={img} alt={`${design.name} view ${i}`} className="w-full h-full object-cover" />
+                </button>
+              ))}
+            </div>
+          )}
 
           {/* Main Zoomable Image Frame */}
           <div 
