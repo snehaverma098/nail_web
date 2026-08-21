@@ -1,5 +1,5 @@
 import React from 'react';
-import { CATEGORIES } from '../data';
+import { CATEGORIES, NAIL_DESIGNS } from '../data';
 import { ChevronRight } from 'lucide-react';
 
 export default function Categories({ selectedCategory, onSelectCategory }) {
@@ -28,6 +28,8 @@ export default function Categories({ selectedCategory, onSelectCategory }) {
       <div className="flex overflow-x-auto space-x-5 sm:space-x-6 md:space-x-10 pb-6 no-scrollbar snap-x snap-mandatory scroll-smooth touch-scroll cursor-grab active:cursor-grabbing px-1">
         {CATEGORIES.map((category) => {
           const isSelected = selectedCategory === category.id;
+          const realSetCount = NAIL_DESIGNS.filter((design) => design.category === category.id).length;
+
           return (
             <div
               key={category.id}
@@ -60,8 +62,8 @@ export default function Categories({ selectedCategory, onSelectCategory }) {
               }`}>
                 {category.name}
               </p>
-              <span className="text-[9px] md:text-[10px] tracking-editorial text-studio-brown uppercase mt-0.5 sm:mt-1">
-                {category.count} Sets
+              <span className="text-[9px] md:text-[10px] tracking-editorial text-studio-brown uppercase mt-0.5 sm:mt-1 font-medium">
+                {realSetCount} {realSetCount === 1 ? 'Set' : 'Sets'}
               </span>
             </div>
           );

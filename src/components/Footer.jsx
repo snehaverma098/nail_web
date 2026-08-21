@@ -52,28 +52,28 @@ export default function Footer({ onNavigateHome, onSelectCategory }) {
           </h4>
           <ul className="space-y-3.5 text-xs text-studio-pink/80 font-light">
             <li>
-              <button onClick={() => onSelectCategory("french")} className="hover:text-white transition-colors duration-300">
-                French Tip Extensions
-              </button>
-            </li>
-            <li>
-              <button onClick={() => onSelectCategory("chrome")} className="hover:text-white transition-colors duration-300">
-                Glazed Chrome Gels
-              </button>
-            </li>
-            <li>
-              <button onClick={() => onSelectCategory("bridal")} className="hover:text-white transition-colors duration-300">
-                Bridal Couture Sets
-              </button>
-            </li>
-            <li>
               <button onClick={() => onSelectCategory("3d")} className="hover:text-white transition-colors duration-300">
                 3D Sculpted Art
               </button>
             </li>
             <li>
+              <button onClick={() => onSelectCategory("anime")} className="hover:text-white transition-colors duration-300">
+                Anime Aesthetic Sets
+              </button>
+            </li>
+            <li>
               <button onClick={() => onSelectCategory("korean")} className="hover:text-white transition-colors duration-300">
-                Korean Quartz Nails
+                Korean Glass Nails
+              </button>
+            </li>
+            <li>
+              <button onClick={() => onSelectCategory("french")} className="hover:text-white transition-colors duration-300">
+                French Tip Extensions
+              </button>
+            </li>
+            <li>
+              <button onClick={() => onSelectCategory("artisanal")} className="hover:text-white transition-colors duration-300">
+                Artisanal Couture Sets
               </button>
             </li>
           </ul>

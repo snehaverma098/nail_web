@@ -105,7 +105,7 @@ export default function MenuDrawer({
                     Nail Collections
                   </span>
                   <ul className="space-y-2 text-xs text-studio-brown uppercase tracking-luxury">
-                    {['French', 'Chrome', 'Bridal', 'Korean', 'Anime', '3D'].map((cat) => (
+                    {['3D', 'Anime', 'Korean', 'French', 'Minimal', 'Artisanal', 'Custom'].map((cat) => (
                       <li key={cat}>
                         <button 
                           onClick={() => handleCategoryClick(cat.toLowerCase())} 

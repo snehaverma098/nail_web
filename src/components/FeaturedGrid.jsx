@@ -32,8 +32,16 @@ export default function FeaturedGrid({ selectedCategory, onSelectDesign }) {
       </div>
 
       {/* Grid Layout (2-Column Mobile Shopping App Style) */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 md:gap-12 items-stretch">
-        {currentDesigns.map((design, index) => (
+      {filteredDesigns.length === 0 ? (
+        <div className="py-12 px-4 text-center bg-white rounded-2xl border border-studio-pink/30 max-w-md mx-auto shadow-xs">
+          <p className="text-base font-serif text-studio-charcoal font-medium mb-1">No Sets Currently Available</p>
+          <p className="text-xs text-studio-brown font-light leading-relaxed">
+            There are currently no pre-crafted sets in this category. Custom bespoke orders are available on request!
+          </p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 md:gap-12 items-stretch">
+          {currentDesigns.map((design, index) => (
           <motion.div
             key={design.id}
             initial={{ opacity: 0, y: 15 }}
@@ -108,6 +116,7 @@ export default function FeaturedGrid({ selectedCategory, onSelectDesign }) {
           </motion.div>
         ))}
       </div>
+      )}
 
       {/* View All Button */}
       {hasMore && (

@@ -52,23 +52,20 @@ export const HERO_SLIDES = [
 ];
 
 export const CATEGORIES = [
-  { id: "french", name: "French", count: 12, image: "/category_french.jpg" },
-  { id: "chrome", name: "Chrome", count: 8, image: "/category_chrome.jpg" },
-  { id: "bridal", name: "Bridal", count: 6, image: "/category_bridal.jpg" },
-  { id: "korean", name: "Korean", count: 14, image: "/category_korean.jpg" },
-  { id: "anime", name: "Anime", count: 10, image: "/category_anime.jpg" },
-  { id: "minimal", name: "Minimal", count: 16, image: "/category_minimal.jpg" },
-  { id: "luxury", name: "Luxury", count: 9, image: "/category_luxury.jpg" },
-  { id: "3d", name: "3D", count: 11, image: "/category_3d.jpg" },
-  { id: "gel", name: "Gel", count: 20, image: "/category_gel.jpg" },
-  { id: "custom", name: "Custom", count: 5, image: "/category_custom.jpg" }
+  { id: "3d", name: "3D", image: "/category_3d.jpg" },
+  { id: "anime", name: "Anime", image: "/category_anime.jpg" },
+  { id: "korean", name: "Korean", image: "/category_korean.jpg" },
+  { id: "french", name: "French", image: "/category_french.jpg" },
+  { id: "minimal", name: "Minimal", image: "/category_minimal.jpg" },
+  { id: "artisanal", name: "Artisanal", image: "/category_luxury.jpg" },
+  { id: "custom", name: "Custom", image: "/category_custom.jpg" }
 ];
 
 export const NAIL_DESIGNS = [
   {
     id: "design-1",
     name: "Bow & Meow",
-    category: "french",
+    category: "3d",
     price: 1800,
     duration: 60,
     images: [
@@ -84,7 +81,7 @@ export const NAIL_DESIGNS = [
   {
     id: "design-2",
     name: "Patel Paradise",
-    category: "chrome",
+    category: "3d",
     price: 2200,
     duration: 75,
     images: [
@@ -99,7 +96,7 @@ export const NAIL_DESIGNS = [
   {
     id: "design-3",
     name: "Swan & Lotus",
-    category: "bridal",
+    category: "korean",
     price: 3500,
     duration: 120,
     images: [
@@ -114,7 +111,7 @@ export const NAIL_DESIGNS = [
   {
     id: "design-4",
     name: "P.S I Love You",
-    category: "korean",
+    category: "french",
     price: 2400,
     duration: 90,
     images: [
@@ -129,7 +126,7 @@ export const NAIL_DESIGNS = [
   {
     id: "design-5",
     name: "Blood.Family.Loyalty",
-    category: "minimal",
+    category: "anime",
     price: 2000,
     duration: 80,
     images: [
@@ -142,9 +139,24 @@ export const NAIL_DESIGNS = [
     reviewsCount: 19
   },
   {
+    id: "design-stars",
+    name: "Celestial Stars",
+    category: "anime",
+    price: 2600,
+    duration: 90,
+    images: [
+      "/collection_4.jpg",
+      "https://images.unsplash.com/photo-1632345031435-8797b2d58045?q=80&w=600&auto=format&fit=crop"
+    ],
+    description: "Dreamy starry aesthetic vector set featuring shimmering celestial constellations and hand-drawn anime accents.",
+    tag: "Anime Special",
+    rating: 4.9,
+    reviewsCount: 34
+  },
+  {
     id: "design-6",
     name: "Riviera Picnic",
-    category: "3d",
+    category: "french",
     price: 4200,
     duration: 150,
     images: [
@@ -159,7 +171,7 @@ export const NAIL_DESIGNS = [
   {
     id: "design-7",
     name: "Cherry Doll",
-    category: "minimal",
+    category: "french",
     price: 1600,
     duration: 45,
     images: [
@@ -174,7 +186,7 @@ export const NAIL_DESIGNS = [
   {
     id: "design-8",
     name: "Purple Sun",
-    category: "luxury",
+    category: "artisanal",
     price: 2500,
     duration: 90,
     images: [
@@ -189,14 +201,14 @@ export const NAIL_DESIGNS = [
   {
     id: "design-9",
     name: "Circus Of Horrors",
-    category: "anime",
+    category: "artisanal",
     price: 3800,
     duration: 120,
     images: [
       "/custom_nail_9.jpg",
       "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=600&auto=format&fit=crop"
     ],
-    description: "Detailed hand-drawn anime aesthetic vectors and matching dreamy pastel cloud blends. Fully custom gel nails.",
+    description: "Detailed hand-drawn artisanal vectors and matching dreamy gothic pastel cloud blends. Fully custom gel nails.",
     tag: "Artisanal",
     rating: 4.8,
     reviewsCount: 14
