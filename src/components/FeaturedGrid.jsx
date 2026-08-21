@@ -53,12 +53,6 @@ export default function FeaturedGrid({ selectedCategory, onSelectDesign }) {
           >
             {/* Card Image Wrapper */}
             <div className="relative aspect-square w-full overflow-hidden bg-studio-beige flex-shrink-0">
-              {/* Product Tag */}
-              {design.tag && (
-                <span className="absolute top-2 left-2 sm:top-4 sm:left-4 z-10 bg-studio-charcoal/90 text-white text-[8px] sm:text-[9px] uppercase tracking-luxury py-0.5 px-2 sm:py-1 sm:px-3.5 rounded-full font-medium shadow-xs">
-                  {design.tag}
-                </span>
-              )}
 
               {/* Cover image */}
               <img

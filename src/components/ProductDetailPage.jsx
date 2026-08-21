@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Star, Clock, Heart, Ruler, ArrowLeft, ShieldCheck, HelpCircle } from 'lucide-react';
+import { Star, Clock, Heart, ArrowLeft, ShieldCheck, HelpCircle } from 'lucide-react';
 import { NAIL_DESIGNS } from '../data';
-
-const LENGTHS = ['Short', 'Medium', 'Long'];
-const SHAPES = ['Square', 'Oval', 'Almond', 'Coffin', 'Stiletto'];
 
 export default function ProductDetailPage({ 
   design, 
@@ -13,9 +10,6 @@ export default function ProductDetailPage({
   onSelectDesign 
 }) {
   const [activeImage, setActiveImage] = useState(design.images[0]);
-  const [selectedLength, setSelectedLength] = useState('Medium');
-  const [selectedShape, setSelectedShape] = useState('Almond');
-  const [sizeGuideOpen, setSizeGuideOpen] = useState(false);
   const [hoveredImage, setHoveredImage] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
@@ -34,9 +28,7 @@ export default function ProductDetailPage({
   const handleBook = () => {
     const customizedItem = {
       ...design,
-      length: selectedLength,
-      shape: selectedShape,
-      customPrice: design.price + (selectedLength === 'Long' ? 400 : selectedLength === 'Medium' ? 200 : 0)
+      customPrice: design.price
     };
     onAddToBag(customizedItem);
   };
@@ -142,14 +134,6 @@ export default function ProductDetailPage({
                 ₹{design.price.toLocaleString()}
               </span>
             </div>
-            
-            <button 
-              onClick={() => setSizeGuideOpen(true)}
-              className="text-xs uppercase tracking-luxury text-studio-rose hover:text-studio-charcoal transition-colors duration-300 flex items-center space-x-1.5 border-b border-studio-rose/20 pb-1"
-            >
-              <Ruler className="w-4 h-4 stroke-[1.2]" />
-              <span>Nail Size Guide</span>
-            </button>
           </div>
 
           {/* Service Description */}
@@ -157,63 +141,10 @@ export default function ProductDetailPage({
             {design.description}
           </p>
 
-          {/* CUSTOMIZATIONS */}
+          {/* BOOKING ACTION */}
           <div className="space-y-6 border-t border-studio-pink/30 pt-6">
-            {/* Length Selector */}
-            <div>
-              <div className="flex justify-between items-center mb-3">
-                <label className="text-xs uppercase tracking-luxury font-medium text-studio-charcoal">
-                  1. Select Length
-                </label>
-                {selectedLength !== 'Short' && (
-                  <span className="text-[10px] text-studio-rose font-medium">
-                    {selectedLength === 'Long' ? '+₹400' : '+₹200'}
-                  </span>
-                )}
-              </div>
-              <div className="grid grid-cols-3 gap-3">
-                {LENGTHS.map((len) => (
-                  <button
-                    key={len}
-                    onClick={() => setSelectedLength(len)}
-                    className={`py-3 px-4 rounded-xl text-xs uppercase tracking-widest transition-all duration-300 border font-medium ${
-                      selectedLength === len
-                        ? 'border-studio-rose bg-studio-rose/5 text-studio-rose shadow-sm'
-                        : 'border-studio-pink/70 hover:border-studio-rose/50 text-studio-charcoal bg-white'
-                    }`}
-                  >
-                    {len}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Shape Selector */}
-            <div>
-              <label className="text-xs uppercase tracking-luxury font-medium text-studio-charcoal block mb-3">
-                2. Choose Shape
-              </label>
-              <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
-                {SHAPES.map((shp) => (
-                  <button
-                    key={shp}
-                    onClick={() => setSelectedShape(shp)}
-                    className={`py-2.5 px-1.5 min-h-[42px] rounded-xl text-[10px] sm:text-[11px] uppercase tracking-widest transition-all duration-300 border text-center font-medium flex items-center justify-center ${
-                      selectedShape === shp
-                        ? 'border-studio-rose bg-studio-rose/10 text-studio-rose shadow-xs'
-                        : 'border-studio-pink/70 hover:border-studio-rose/50 active:bg-studio-pink/10 text-studio-charcoal bg-white'
-                    }`}
-                  >
-                    {shp}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-
-
             {/* Book Now Button (Desktop / Main Container) */}
-            <div className="pt-6">
+            <div>
               <motion.button
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.98 }}
@@ -222,7 +153,7 @@ export default function ProductDetailPage({
               >
                 <span>Book Appointment</span>
                 <span className="text-[11px] font-light font-sans opacity-80">
-                  (₹{(design.price + (selectedLength === 'Long' ? 400 : selectedLength === 'Medium' ? 200 : 0)).toLocaleString()})
+                  (₹{design.price.toLocaleString()})
                 </span>
               </motion.button>
             </div>
@@ -231,10 +162,10 @@ export default function ProductDetailPage({
             <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-studio-pink/30 p-3 px-4 flex justify-between items-center shadow-2xl md:hidden pb-safe">
               <div>
                 <span className="text-[9px] uppercase tracking-editorial text-studio-brown block leading-tight">
-                  {selectedLength} &bull; {selectedShape}
+                  Bespoke Set
                 </span>
                 <span className="text-base font-serif font-semibold text-studio-charcoal">
-                  ₹{(design.price + (selectedLength === 'Long' ? 400 : selectedLength === 'Medium' ? 200 : 0)).toLocaleString()}
+                  ₹{design.price.toLocaleString()}
                 </span>
               </div>
               <button
@@ -286,116 +217,6 @@ export default function ProductDetailPage({
           ))}
         </div>
       </div>
-
-      {/* NAIL SIZE GUIDE DIALOG */}
-      <AnimatePresence>
-        {sizeGuideOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setSizeGuideOpen(false)}
-              className="absolute inset-0 bg-studio-charcoal/40 backdrop-blur-sm"
-            />
-            
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="bg-white max-w-lg w-full rounded-3xl p-6 md:p-8 shadow-2xl relative z-10 text-left border border-studio-pink/30"
-            >
-              <h3 className="text-xl md:text-2xl font-serif text-studio-charcoal font-semibold mb-4 border-b border-studio-pink/30 pb-3">
-                Nail Measurement Guide
-              </h3>
-              
-              <p className="text-xs text-studio-brown leading-relaxed mb-6 font-light">
-                Follow this simple method to select your extension tips or order custom press-ons:
-              </p>
-
-              {/* Steps */}
-              <div className="space-y-4 mb-6">
-                <div className="flex space-x-3 text-xs leading-relaxed text-studio-brown font-light">
-                  <span className="w-5 h-5 rounded-full bg-studio-pink/30 text-studio-charcoal font-semibold flex items-center justify-center text-[10px] flex-shrink-0">
-                    1
-                  </span>
-                  <p>Place a strip of tape across the widest part of your natural nail bed.</p>
-                </div>
-                <div className="flex space-x-3 text-xs leading-relaxed text-studio-brown font-light">
-                  <span className="w-5 h-5 rounded-full bg-studio-pink/30 text-studio-charcoal font-semibold flex items-center justify-center text-[10px] flex-shrink-0">
-                    2
-                  </span>
-                  <p>Mark the left and right edges with a pen, then peel off the tape.</p>
-                </div>
-                <div className="flex space-x-3 text-xs leading-relaxed text-studio-brown font-light">
-                  <span className="w-5 h-5 rounded-full bg-studio-pink/30 text-studio-charcoal font-semibold flex items-center justify-center text-[10px] flex-shrink-0">
-                    3
-                  </span>
-                  <p>Measure the marked distance in millimeters using a ruler.</p>
-                </div>
-              </div>
-
-              {/* Size Chart Table */}
-              <div className="overflow-x-auto rounded-xl border border-studio-pink/20 mb-6">
-                <table className="w-full text-xs text-left">
-                  <thead className="bg-studio-cream text-studio-charcoal uppercase tracking-editorial text-[9px] font-medium border-b border-studio-pink/20">
-                    <tr>
-                      <th className="py-2.5 px-3">Size</th>
-                      <th className="py-2.5 px-3">Thumb</th>
-                      <th className="py-2.5 px-3">Index</th>
-                      <th className="py-2.5 px-3">Middle</th>
-                      <th className="py-2.5 px-3">Ring</th>
-                      <th className="py-2.5 px-3">Pinky</th>
-                    </tr>
-                  </thead>
-                  <tbody className="text-studio-brown">
-                    <tr className="border-b border-studio-pink/10">
-                      <td className="py-2.5 px-3 font-semibold text-studio-charcoal">XS</td>
-                      <td className="py-2.5 px-3">14mm</td>
-                      <td className="py-2.5 px-3">10mm</td>
-                      <td className="py-2.5 px-3">11mm</td>
-                      <td className="py-2.5 px-3">10mm</td>
-                      <td className="py-2.5 px-3">7mm</td>
-                    </tr>
-                    <tr className="border-b border-studio-pink/10">
-                      <td className="py-2.5 px-3 font-semibold text-studio-charcoal">S</td>
-                      <td className="py-2.5 px-3">15mm</td>
-                      <td className="py-2.5 px-3">11mm</td>
-                      <td className="py-2.5 px-3">12mm</td>
-                      <td className="py-2.5 px-3">11mm</td>
-                      <td className="py-2.5 px-3">8mm</td>
-                    </tr>
-                    <tr className="border-b border-studio-pink/10">
-                      <td className="py-2.5 px-3 font-semibold text-studio-charcoal">M</td>
-                      <td className="py-2.5 px-3">16mm</td>
-                      <td className="py-2.5 px-3">12mm</td>
-                      <td className="py-2.5 px-3">13mm</td>
-                      <td className="py-2.5 px-3">12mm</td>
-                      <td className="py-2.5 px-3">9mm</td>
-                    </tr>
-                    <tr>
-                      <td className="py-2.5 px-3 font-semibold text-studio-charcoal">L</td>
-                      <td className="py-2.5 px-3">18mm</td>
-                      <td className="py-2.5 px-3">13mm</td>
-                      <td className="py-2.5 px-3">14mm</td>
-                      <td className="py-2.5 px-3">13mm</td>
-                      <td className="py-2.5 px-3">10mm</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <button
-                onClick={() => setSizeGuideOpen(false)}
-                className="w-full bg-studio-charcoal text-white text-xs uppercase tracking-luxury font-medium py-3 rounded-full hover:bg-studio-rose transition-colors duration-300"
-              >
-                Close size guide
-              </button>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }

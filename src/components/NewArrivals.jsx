@@ -69,10 +69,6 @@ export default function NewArrivals({ onSelectDesign }) {
           >
             {/* Card Square Image */}
             <div className="relative aspect-square w-full overflow-hidden bg-studio-beige flex-shrink-0">
-              {/* Product Tag */}
-              <span className="absolute top-2 left-2 sm:top-3.5 sm:left-3.5 z-10 bg-studio-rose text-white text-[8px] sm:text-[9px] uppercase tracking-luxury py-0.5 px-2 sm:py-1 sm:px-3 rounded-full font-medium shadow-xs">
-                {design.tag}
-              </span>
 
               <img
                 src={design.images[0]}
