@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
+import { NAIL_DESIGNS } from './data';
 
 // Component Imports
 import Header from './components/Header';
@@ -28,7 +29,7 @@ export default function App() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [bagOpen, setBagOpen] = useState(false);
 
-  // Sync Booking Bag from Local Storage on mount
+  // Sync Booking Bag from Local Storage on mount & handle URL Routing / PopState
   useEffect(() => {
     const savedBag = localStorage.getItem('nailedit_bag_items');
     if (savedBag) {
@@ -38,6 +39,54 @@ export default function App() {
         console.error('Failed to parse bag items from storage', e);
       }
     }
+
+    // Initial URL Routing check on load
+    const parseUrlAndSetState = () => {
+      const searchParams = new URLSearchParams(window.location.search);
+      const designId = searchParams.get('design');
+      const categoryId = searchParams.get('category');
+
+      if (designId) {
+        const found = NAIL_DESIGNS.find((d) => d.id === designId);
+        if (found) {
+          setSelectedDesign(found);
+          setCurrentView('detail');
+          return;
+        }
+      }
+
+      if (categoryId) {
+        setSelectedCategory(categoryId);
+      }
+      setCurrentView('home');
+      setSelectedDesign(null);
+    };
+
+    parseUrlAndSetState();
+
+    // Listen to browser Back / Forward buttons & mobile swipe gestures
+    const handlePopState = (event) => {
+      const searchParams = new URLSearchParams(window.location.search);
+      const designId = searchParams.get('design');
+      const categoryId = searchParams.get('category');
+
+      if (designId) {
+        const found = NAIL_DESIGNS.find((d) => d.id === designId);
+        if (found) {
+          setSelectedDesign(found);
+          setCurrentView('detail');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
+      }
+
+      setCurrentView('home');
+      setSelectedDesign(null);
+      setSelectedCategory(categoryId || null);
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
   // Save Booking Bag to Local Storage when modified
@@ -46,11 +95,15 @@ export default function App() {
     localStorage.setItem('nailedit_bag_items', JSON.stringify(newItems));
   };
 
-  // View transitions and scrolls
+  // View transitions and history navigation
   const handleSelectDesign = (design) => {
     setSelectedDesign(design);
     setCurrentView('detail');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Push new history entry so browser back button steps back page-by-page
+    const url = `?design=${design.id}`;
+    window.history.pushState({ view: 'detail', designId: design.id }, '', url);
   };
 
   const handleNavigateHome = () => {
@@ -58,14 +111,28 @@ export default function App() {
     setSelectedDesign(null);
     setSelectedCategory(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (window.location.search) {
+      window.history.pushState({ view: 'home' }, '', window.location.pathname);
+    }
+  };
+
+  const handleBackToCollection = () => {
+    if (window.history.length > 1 && window.location.search.includes('design')) {
+      window.history.back();
+    } else {
+      handleNavigateHome();
+    }
   };
 
   const handleSelectCategory = (catId) => {
     setSelectedCategory(catId);
     setCurrentView('home');
     setSelectedDesign(null);
-    
-    // Scroll smoothly to Featured Grid section
+
+    const url = catId ? `?category=${catId}` : window.location.pathname;
+    window.history.pushState({ view: 'home', categoryId: catId }, '', url);
+
     setTimeout(() => {
       const gridElem = document.getElementById('featured-grid-section');
       if (gridElem) {
@@ -163,7 +230,7 @@ export default function App() {
               {selectedDesign && (
                 <ProductDetailPage
                   design={selectedDesign}
-                  onBack={() => setCurrentView('home')}
+                  onBack={handleBackToCollection}
                   onAddToBag={handleAddToBag}
                   onSelectDesign={handleSelectDesign}
                 />
