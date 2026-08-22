@@ -13,10 +13,32 @@ export default function ProductDetailPage({
   const [hoveredImage, setHoveredImage] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
-  // Get related designs (excluding current design)
-  const relatedDesigns = NAIL_DESIGNS
-    .filter((d) => d.id !== design.id)
-    .slice(0, 4);
+  // Dynamically generate unique shuffled related designs for each nail set
+  const relatedDesigns = React.useMemo(() => {
+    const others = NAIL_DESIGNS.filter((d) => d.id !== design.id);
+    
+    // Hash based on design.id string for deterministic shuffle per design
+    let hash = 0;
+    for (let i = 0; i < design.id.length; i++) {
+      hash = (hash << 5) - hash + design.id.charCodeAt(i);
+      hash |= 0;
+    }
+    
+    // Sort items deterministically based on hash & category matching
+    const sorted = [...others].sort((a, b) => {
+      const aCategoryMatch = a.category === design.category ? -1 : 1;
+      const bCategoryMatch = b.category === design.category ? -1 : 1;
+      if (aCategoryMatch !== bCategoryMatch) return aCategoryMatch - bCategoryMatch;
+      
+      const aKey = (Math.abs(hash * 31 + a.id.length * 17 + a.price) % 100);
+      const bKey = (Math.abs(hash * 31 + b.id.length * 17 + b.price) % 100);
+      return aKey - bKey;
+    });
+
+    // Vary item count (5 or 6 items) per design set so each opened set has a different count & selection
+    const count = (Math.abs(hash) % 2 === 0) ? 6 : 5;
+    return sorted.slice(0, count);
+  }, [design.id, design.category]);
 
   const handleMouseMove = (e) => {
     const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
@@ -187,10 +209,15 @@ export default function ProductDetailPage({
 
       {/* RELATED DESIGNS SECTION */}
       <div className="border-t border-studio-pink/30 pt-10 sm:pt-16 text-left">
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-studio-charcoal font-semibold mb-6 sm:mb-8">
-          Related Designs
-        </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 md:gap-8 items-stretch">
+        <div className="flex justify-between items-center mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-studio-charcoal font-semibold">
+            Related Designs
+          </h2>
+          <span className="text-[10px] sm:text-xs uppercase tracking-luxury text-studio-brown font-medium">
+            {relatedDesigns.length} Curated Sets
+          </span>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-6 items-stretch">
           {relatedDesigns.map((rel) => (
             <div
               key={rel.id}
@@ -209,21 +236,21 @@ export default function ProductDetailPage({
                   loading="lazy"
                 />
               </div>
-              <div className="p-3 sm:p-5 flex flex-col flex-grow justify-between text-left min-w-0">
+              <div className="p-3 sm:p-4 flex flex-col flex-grow justify-between text-left min-w-0">
                 <div>
                   <div className="flex items-center text-studio-rose space-x-1 mb-1">
                     <Star className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-current stroke-[1] flex-shrink-0" />
                     <span className="text-[10px] sm:text-xs font-medium leading-none">{rel.rating}</span>
                   </div>
-                  <h3 className="text-xs sm:text-base font-serif text-studio-charcoal group-hover:text-studio-rose transition-colors duration-300 font-medium leading-snug break-words">
+                  <h3 className="text-xs sm:text-sm font-serif text-studio-charcoal group-hover:text-studio-rose transition-colors duration-300 font-medium leading-snug break-words">
                     {rel.name}
                   </h3>
                 </div>
-                <div className="mt-2.5 pt-2 border-t border-studio-pink/20 flex justify-between items-center gap-1">
-                  <span className="text-xs sm:text-base font-medium text-studio-charcoal leading-none block">
+                <div className="mt-2 pt-2 border-t border-studio-pink/20 flex justify-between items-center gap-1">
+                  <span className="text-xs sm:text-sm font-medium text-studio-charcoal leading-none block">
                     ₹{rel.price.toLocaleString()}
                   </span>
-                  <span className="text-[8px] sm:text-[10px] uppercase tracking-luxury text-studio-rose font-medium group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0">
+                  <span className="text-[8px] sm:text-[9px] uppercase tracking-luxury text-studio-rose font-medium group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0">
                     View &rarr;
                   </span>
                 </div>
