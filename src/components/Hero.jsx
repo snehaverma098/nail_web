@@ -115,10 +115,12 @@ export default function Hero() {
           {/* Decorative Divider */}
           <div className="w-24 sm:w-44 md:w-56 h-[1.5px] bg-gradient-to-r from-[#E5C384] via-[#E5C384]/70 to-transparent my-1 sm:my-1.5" />
 
-          {/* Cursive Signature: Nails by Jazz */}
-          <span className="font-cursive font-normal text-xl sm:text-3xl md:text-4xl lg:text-5xl text-[#F0D59E] tracking-normal block leading-tight drop-shadow-md">
-            Nails by Jazz
-          </span>
+          {/* Cursive Signature: Nails by Jazz (Right Aligned, Free-Style Cursive) */}
+          <div className="w-full flex justify-end pt-0.5 sm:pt-1">
+            <span className="font-cursive font-normal text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-[#F0D59E] tracking-wide text-right block leading-tight drop-shadow-[0_2px_12px_rgba(240,213,158,0.4)]">
+              Nails by Jazz
+            </span>
+          </div>
         </motion.div>
 
       </div>
