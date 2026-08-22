@@ -45,7 +45,7 @@ const GoldParticles = () => {
 
 export default function Hero() {
   return (
-    <section className="w-full relative bg-gradient-to-b from-[#4A0715] via-[#3B0510] to-[#2B030B] text-[#FAF3EB] overflow-hidden py-5 sm:py-8 md:py-10 px-4 sm:px-6 md:px-8 selection:bg-[#E5C384]/30 min-h-0 border-b border-[#E5C384]/20 shadow-md">
+    <section className="w-full relative bg-gradient-to-b from-[#4A0715] via-[#3B0510] to-[#2B030B] text-[#FAF3EB] overflow-hidden py-6 sm:py-10 md:py-14 lg:py-16 px-4 sm:px-6 md:px-10 selection:bg-[#E5C384]/30 min-h-0 border-b border-[#E5C384]/20 shadow-md">
       
       {/* 1. Deep Burgundy Velvet / Vignette Texture Overlay */}
       <div 
@@ -54,7 +54,7 @@ export default function Hero() {
       />
       
       {/* 2. Soft Vignette Borders */}
-      <div className="absolute inset-0 shadow-[inset_0_0_80px_rgba(15,1,4,0.7)] pointer-events-none z-0" aria-hidden="true" />
+      <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(15,1,4,0.75)] pointer-events-none z-0" aria-hidden="true" />
 
       {/* 3. Subtle Fabric Grain Texture */}
       <div 
@@ -64,15 +64,15 @@ export default function Hero() {
 
       {/* 4. Ambient Warm Champagne Spotlight Glow */}
       <div 
-        className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[500px] h-[200px] sm:h-[350px] bg-gradient-to-r from-[#7D1127]/25 via-[#E5C384]/15 to-[#9E1B36]/20 rounded-full blur-[90px] pointer-events-none z-0" 
+        className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] h-[250px] sm:h-[400px] bg-gradient-to-r from-[#7D1127]/30 via-[#E5C384]/15 to-[#9E1B36]/25 rounded-full blur-[100px] pointer-events-none z-0" 
         aria-hidden="true"
       />
 
       {/* 5. Subtle Floating Gold Particles */}
       <GoldParticles />
 
-      {/* Compact Horizontal Hero Rectangular Banner Layout */}
-      <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-row items-center justify-center gap-3.5 sm:gap-6 md:gap-10">
+      {/* Full-width Horizontal Rectangular Hero Banner Layout */}
+      <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-row items-center justify-center gap-4 sm:gap-8 md:gap-12 lg:gap-16">
         
         {/* LEFT: Square Logo Image */}
         <motion.div
@@ -83,7 +83,7 @@ export default function Hero() {
         >
           {/* Subtle Glow behind Logo */}
           <div 
-            className="absolute -inset-2 sm:-inset-3 bg-gradient-to-tr from-[#E5C384]/25 via-[#F0D59E]/30 to-[#E5C384]/20 rounded-lg blur-md opacity-80 pointer-events-none" 
+            className="absolute -inset-2.5 sm:-inset-4 bg-gradient-to-tr from-[#E5C384]/30 via-[#F0D59E]/35 to-[#E5C384]/25 rounded-lg blur-md opacity-85 pointer-events-none" 
             aria-hidden="true" 
           />
 
@@ -91,7 +91,7 @@ export default function Hero() {
           <img 
             src="/logo.png" 
             alt="Nailedit.FRR Official Stamp Logo" 
-            className="relative z-10 w-[95px] h-[95px] sm:w-[140px] sm:h-[140px] md:w-[170px] md:h-[170px] object-contain rounded-sm drop-shadow-md transition-transform duration-300 group-hover:scale-105"
+            className="relative z-10 w-[115px] h-[115px] sm:w-[165px] sm:h-[165px] md:w-[210px] md:h-[210px] lg:w-[250px] lg:h-[250px] object-contain rounded-sm drop-shadow-lg transition-transform duration-300 group-hover:scale-105"
           />
         </motion.div>
 
@@ -100,23 +100,23 @@ export default function Hero() {
           initial={{ opacity: 0, x: 15 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col justify-center text-left space-y-1 sm:space-y-1.5 md:space-y-2 select-none min-w-0"
+          className="flex flex-col justify-center text-left space-y-1.5 sm:space-y-2.5 md:space-y-3 select-none flex-grow min-w-0"
         >
-          {/* Main Title: NAILEDIT.FRR */}
-          <h1 className="font-display font-light text-lg sm:text-3xl md:text-4xl lg:text-5xl tracking-[0.16em] sm:tracking-[0.2em] uppercase leading-tight text-transparent bg-clip-text bg-gradient-to-b from-[#FFFDF9] via-[#FAF3EB] to-[#F3E2CE] drop-shadow-md">
+          {/* Main Title: NAILEDIT.FRR (Bolder & Larger) */}
+          <h1 className="font-display font-bold text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-[0.14em] sm:tracking-[0.18em] uppercase leading-tight text-transparent bg-clip-text bg-gradient-to-b from-[#FFFDF9] via-[#FAF3EB] to-[#F3E2CE] drop-shadow-lg">
             NAILEDIT.FRR
           </h1>
 
           {/* Subtitle: PUNJAB · LUDHIANA */}
-          <p className="text-[7.5px] sm:text-xs md:text-sm uppercase tracking-[0.3em] sm:tracking-[0.45em] text-[#E5C384] font-sans font-medium opacity-90">
+          <p className="text-[9px] sm:text-xs md:text-sm lg:text-base uppercase tracking-[0.35em] sm:tracking-[0.5em] text-[#E5C384] font-sans font-medium opacity-95">
             PUNJAB &bull; LUDHIANA
           </p>
 
           {/* Decorative Divider */}
-          <div className="w-16 sm:w-28 h-[1px] bg-gradient-to-r from-[#E5C384]/80 to-transparent my-0.5 sm:my-1" />
+          <div className="w-24 sm:w-44 md:w-56 h-[1.5px] bg-gradient-to-r from-[#E5C384] via-[#E5C384]/70 to-transparent my-1 sm:my-1.5" />
 
           {/* Cursive Signature: Nails by Jazz */}
-          <span className="font-cursive font-normal text-lg sm:text-2xl md:text-3xl lg:text-4xl text-[#F0D59E] tracking-normal block leading-tight drop-shadow-sm">
+          <span className="font-cursive font-normal text-xl sm:text-3xl md:text-4xl lg:text-5xl text-[#F0D59E] tracking-normal block leading-tight drop-shadow-md">
             Nails by Jazz
           </span>
         </motion.div>
