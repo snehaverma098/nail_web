@@ -77,12 +77,7 @@ export default function NewArrivals({ onSelectDesign }) {
                 loading="lazy"
               />
 
-              {/* Mobile & Desktop Cover Overlay Button */}
-              <div className="absolute inset-0 bg-gradient-to-t from-studio-charcoal/40 via-transparent to-transparent lg:bg-studio-charcoal/10 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-2 sm:pb-5">
-                <span className="bg-white/95 text-studio-charcoal uppercase tracking-luxury text-[9px] sm:text-xs font-semibold py-1 px-3 sm:py-2.5 sm:px-7 rounded-full shadow-md group-hover:bg-studio-charcoal group-hover:text-white transition-colors duration-300">
-                  Book Appointment
-                </span>
-              </div>
+
             </div>
 
             {/* Content Area (Neat, Balanced Alignment) */}
