@@ -16,7 +16,7 @@ export default function ProductDetailPage({
   // Get related designs (excluding current design)
   const relatedDesigns = NAIL_DESIGNS
     .filter((d) => d.id !== design.id)
-    .slice(0, 3);
+    .slice(0, 4);
 
   const handleMouseMove = (e) => {
     const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
@@ -186,32 +186,47 @@ export default function ProductDetailPage({
       </div>
 
       {/* RELATED DESIGNS SECTION */}
-      <div className="border-t border-studio-pink/30 pt-16 text-left">
-        <h2 className="text-2xl md:text-3xl font-serif text-studio-charcoal font-semibold mb-8">
+      <div className="border-t border-studio-pink/30 pt-10 sm:pt-16 text-left">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-studio-charcoal font-semibold mb-6 sm:mb-8">
           Related Designs
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 md:gap-8 items-stretch">
           {relatedDesigns.map((rel) => (
             <div
               key={rel.id}
               onClick={() => {
                 onSelectDesign(rel);
                 setActiveImage(rel.images[0]);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="group cursor-pointer bg-white rounded-2xl overflow-hidden border border-studio-pink/30 hover:shadow-sm transition-all duration-300"
+              className="group cursor-pointer flex flex-col h-full bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-studio-pink/30 hover:shadow-md active:scale-[0.99] transition-all duration-300 transform-gpu"
             >
-              <div className="aspect-[4/5] overflow-hidden bg-studio-beige">
+              <div className="aspect-square w-full overflow-hidden bg-studio-beige flex-shrink-0">
                 <img
                   src={rel.images[0]}
                   alt={rel.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  loading="lazy"
                 />
               </div>
-              <div className="p-5">
-                <h3 className="text-base font-serif text-studio-charcoal group-hover:text-studio-rose font-medium transition-colors duration-300">
-                  {rel.name}
-                </h3>
-                <p className="text-sm text-studio-brown mt-1">₹{rel.price.toLocaleString()}</p>
+              <div className="p-3 sm:p-5 flex flex-col flex-grow justify-between text-left min-w-0">
+                <div>
+                  <div className="flex items-center text-studio-rose space-x-1 mb-1">
+                    <Star className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-current stroke-[1] flex-shrink-0" />
+                    <span className="text-[10px] sm:text-xs font-medium leading-none">{rel.rating}</span>
+                  </div>
+                  <h3 className="text-xs sm:text-base font-serif text-studio-charcoal group-hover:text-studio-rose transition-colors duration-300 font-medium leading-snug break-words">
+                    {rel.name}
+                  </h3>
+                </div>
+                <div className="mt-2.5 pt-2 border-t border-studio-pink/20 flex justify-between items-center gap-1">
+                  <span className="text-xs sm:text-base font-medium text-studio-charcoal leading-none block">
+                    ₹{rel.price.toLocaleString()}
+                  </span>
+                  <span className="text-[8px] sm:text-[10px] uppercase tracking-luxury text-studio-rose font-medium group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0">
+                    View &rarr;
+                  </span>
+                </div>
               </div>
             </div>
           ))}
