@@ -80,14 +80,21 @@ export default function Header({
           {/* Centered Logo */}
           <div 
             onClick={onNavigateHome}
-            className="cursor-pointer select-none text-center px-2"
+            className="cursor-pointer select-none text-center px-2 flex items-center justify-center space-x-2 sm:space-x-3 group"
           >
-            <h1 className="text-base sm:text-xl md:text-2xl font-serif font-semibold tracking-[0.18em] sm:tracking-[0.2em] text-studio-charcoal hover:opacity-80 transition-opacity duration-300 uppercase leading-none">
-              NAILEDIT.FRR
-            </h1>
-            <p className="text-[7px] sm:text-[8px] tracking-[0.35em] sm:tracking-[0.4em] uppercase text-studio-rose mt-1 -mr-1 font-medium">
-              Punjab &bull; Ludhiana
-            </p>
+            <img 
+              src="/logo.png" 
+              alt="Nailedit.FRR Logo" 
+              className="h-7 sm:h-9 md:h-10 w-auto object-contain rounded-xs shadow-2xs group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="text-left">
+              <h1 className="text-base sm:text-xl md:text-2xl font-serif font-semibold tracking-[0.18em] sm:tracking-[0.2em] text-studio-charcoal hover:opacity-80 transition-opacity duration-300 uppercase leading-none">
+                NAILEDIT.FRR
+              </h1>
+              <p className="text-[7px] sm:text-[8px] tracking-[0.35em] sm:tracking-[0.4em] uppercase text-studio-rose mt-1 -mr-1 font-medium">
+                Punjab &bull; Ludhiana
+              </p>
+            </div>
           </div>
 
           {/* Right Icons with 44px touch targets */}

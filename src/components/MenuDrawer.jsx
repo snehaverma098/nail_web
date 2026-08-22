@@ -64,7 +64,8 @@ export default function MenuDrawer({
             >
               {/* Top Row: Close button */}
               <div className="flex justify-between items-center pb-5 border-b border-studio-pink/20">
-                <div onClick={handleHomeClick} className="cursor-pointer">
+                <div onClick={handleHomeClick} className="cursor-pointer flex items-center space-x-2.5">
+                  <img src="/logo.png" alt="Nailedit.FRR Logo" className="h-6 w-auto object-contain rounded-xs" />
                   <h3 className="text-base font-serif font-semibold tracking-luxury text-studio-charcoal uppercase">
                     NAILEDIT.FRR
                   </h3>

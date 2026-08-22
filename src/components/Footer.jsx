@@ -23,13 +23,16 @@ export default function Footer({ onNavigateHome, onSelectCategory }) {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-12 text-left">
         {/* Brand Column */}
         <div className="md:col-span-1">
-          <div onClick={onNavigateHome} className="cursor-pointer inline-block mb-4">
-            <h3 className="text-xl md:text-2xl font-serif font-semibold tracking-[0.2em] text-white uppercase">
-              NAILEDIT.FRR
-            </h3>
-            <p className="text-[8px] tracking-[0.4em] uppercase text-studio-rose mt-0.5">
-              Punjab &bull; Ludhiana
-            </p>
+          <div onClick={onNavigateHome} className="cursor-pointer inline-flex items-center space-x-3 mb-4">
+            <img src="/logo.png" alt="Nailedit.FRR Logo" className="h-9 md:h-10 w-auto object-contain rounded-xs" />
+            <div>
+              <h3 className="text-xl md:text-2xl font-serif font-semibold tracking-[0.2em] text-white uppercase">
+                NAILEDIT.FRR
+              </h3>
+              <p className="text-[8px] tracking-[0.4em] uppercase text-studio-rose mt-0.5">
+                Punjab &bull; Ludhiana
+              </p>
+            </div>
           </div>
           <p className="text-xs text-studio-pink/70 font-light leading-relaxed max-w-xs mt-4">
             A premium, bespoke nail sanctuary crafting avant-garde extensions, precision builder gels, and editorial nail designs.
