@@ -4,9 +4,9 @@ import { ChevronRight } from 'lucide-react';
 
 export default function Categories({ selectedCategory, onSelectCategory }) {
   return (
-    <section className="w-full py-16 px-4 md:px-8 max-w-7xl mx-auto bg-studio-cream">
+    <section className="w-full py-5 sm:py-8 md:py-12 px-4 md:px-8 max-w-7xl mx-auto bg-studio-cream">
       {/* Section Title */}
-      <div className="flex justify-between items-end mb-10 border-b border-studio-pink/30 pb-4">
+      <div className="flex justify-between items-end mb-4 sm:mb-8 border-b border-studio-pink/30 pb-3">
         <div>
           <span className="text-[10px] uppercase tracking-luxury text-studio-rose font-medium block mb-1">
             Browse By Look
@@ -25,7 +25,7 @@ export default function Categories({ selectedCategory, onSelectCategory }) {
       </div>
 
       {/* Horizontal Circular Carousel */}
-      <div className="flex overflow-x-auto space-x-5 sm:space-x-6 md:space-x-10 pb-6 no-scrollbar snap-x snap-mandatory scroll-smooth touch-scroll cursor-grab active:cursor-grabbing px-1">
+      <div className="flex overflow-x-auto space-x-5 sm:space-x-6 md:space-x-10 pb-2 sm:pb-4 no-scrollbar snap-x snap-mandatory scroll-smooth touch-scroll cursor-grab active:cursor-grabbing px-1">
         {CATEGORIES.map((category) => {
           const isSelected = selectedCategory === category.id;
           const realSetCount = NAIL_DESIGNS.filter((design) => design.category === category.id).length;

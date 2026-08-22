@@ -30,9 +30,9 @@ const COLLECTIONS = [
 
 export default function TopCollections({ onSelectCategory }) {
   return (
-    <section className="w-full py-16 px-4 md:px-8 max-w-7xl mx-auto bg-studio-cream border-t border-studio-pink/30">
+    <section className="w-full py-5 sm:py-8 md:py-12 px-4 md:px-8 max-w-7xl mx-auto bg-studio-cream border-t border-studio-pink/30">
       {/* Section Title */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-6 sm:mb-10 md:mb-14">
         <span className="text-[10px] uppercase tracking-luxury text-studio-rose font-medium block mb-2">
           Visual Lookbook
         </span>

@@ -19,9 +19,9 @@ export default function FeaturedGrid({ selectedCategory, onSelectDesign }) {
   };
 
   return (
-    <section className="w-full py-16 px-4 md:px-8 max-w-7xl mx-auto bg-studio-cream">
+    <section className="w-full py-5 sm:py-8 md:py-12 px-4 md:px-8 max-w-7xl mx-auto bg-studio-cream">
       {/* Section Title */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-6 sm:mb-10 md:mb-14">
         <span className="text-[10px] uppercase tracking-luxury text-studio-rose font-medium block mb-2">
           Bespoke Selection
         </span>

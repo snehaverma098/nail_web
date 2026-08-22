@@ -5,8 +5,8 @@ import { INSTAGRAM_POSTS } from '../data';
 
 export default function InstagramGallery() {
   return (
-    <section className="w-full py-16 bg-studio-cream border-t border-studio-pink/30">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 mb-12 flex flex-col md:flex-row justify-between items-start md:items-end">
+    <section className="w-full py-5 sm:py-8 md:py-12 bg-studio-cream border-t border-studio-pink/30">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 mb-6 sm:mb-10 flex flex-col md:flex-row justify-between items-start md:items-end">
         <div className="text-left mb-4 md:mb-0">
           <span className="text-[10px] uppercase tracking-luxury text-studio-rose font-medium block mb-1">
             Social Showcase
